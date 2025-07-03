@@ -1,10 +1,10 @@
 import os
-from llama_index.core.embeddings.base import BaseEmbedding
+from llama_index.embeddings.base import BaseEmbedding
 from pydantic import Field
 
 VENICE_API_KEY = os.environ.get("VENICE_API_KEY")
 VENICE_BASE_URL = os.environ.get("VENICE_BASE_URL", "https://api.venice.ai/api/v1")
-VENICE_EMBEDDING_MODEL = os.environ.get("VENICE_EMBEDDING_MODEL", "venice-uncensored")  # Or the correct embedding model ID if Venice exposes a dedicated one
+VENICE_EMBEDDING_MODEL = os.environ.get("VENICE_EMBEDDING_MODEL", "default-model")  # Replace with actual model if needed
 
 class VeniceEmbedding(BaseEmbedding):
     api_url: str = Field(default=VENICE_BASE_URL)
