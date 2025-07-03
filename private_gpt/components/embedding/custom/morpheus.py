@@ -1,5 +1,5 @@
 import os
-from llama_index.core.embeddings.base import BaseEmbedding
+from llama_index.embeddings.base import BaseEmbedding
 from pydantic import Field
 
 MORPHEUS_API_KEY = os.environ.get("MORPHEUS_API_KEY")
