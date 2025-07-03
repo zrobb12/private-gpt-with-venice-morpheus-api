@@ -1,0 +1,13 @@
+llm:
+  mode: venice                # or 'morpheus'
+  model: venice-uncensored    # or 'LMR-OpenAI-GPT-4o'
+  temperature: 0.7            # Example default value
+  max_tokens: 2048            # Example default value
+
+venice:
+  api_key: ${VENICE_API_KEY}
+  base_url: ${VENICE_BASE_URL}
+
+morpheus:
+  api_key: ${MORPHEUS_API_KEY}
+  base_url: ${MORPHEUS_BASE_URL}
