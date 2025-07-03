@@ -12,6 +12,10 @@ from private_gpt.components.llm.prompt_helper import get_prompt_style
 from private_gpt.paths import models_cache_path, models_path
 from private_gpt.settings.settings import Settings
 
+# Custom LLMs
+from private_gpt.components.llm.custom.venice import VeniceLLM
+from private_gpt.components.llm.custom.morpheus import MorpheusLLM
+
 logger = logging.getLogger(__name__)
 
 
@@ -221,5 +225,9 @@ class LLMComponent:
                 self.llm = Gemini(
                     model_name=gemini_settings.model, api_key=gemini_settings.api_key
                 )
+            case "venice":
+                self.llm = VeniceLLM()
+            case "morpheus":
+                self.llm = MorpheusLLM()
             case "mock":
                 self.llm = MockLLM()
